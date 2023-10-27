@@ -1,4 +1,8 @@
 #!/usr/bin/env node
+
+import { exit } from "process";
+
+/* eslint-disable no-console */
 const error = (msg) => {
   throw new Error(msg);
 };
@@ -52,6 +56,9 @@ const displayScores = () =>
     console.log(` ${score.team2}: ${score.team2Score}`);
     console.log(score.status);
     console.log(separator);
+    if (score.status.includes("won")) {
+      exit();
+    }
   });
 displayScores();
 setInterval(displayScores, process.env.WAIT_TIME_IN_MS || 2000);
