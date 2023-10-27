@@ -15,6 +15,7 @@
     "@commitlint/cli": "^18.2.0",
     "@commitlint/config-conventional": "^18.1.0",
     "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.52.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.0.0",
@@ -24,7 +25,17 @@
     "prettier": "3.0.3"
   },
   "lint-staged": {
-    "*.js": "eslint src --cache --fix",
-    "*.{js,css,md}": "prettier src --write"
+    "*.{js,mjs}": "eslint src/* --cache --fix",
+    "*.{js,mjs,md}": "prettier src/* --write"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
   }
 }
