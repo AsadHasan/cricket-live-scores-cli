@@ -1,0 +1,9 @@
+services:
+  score:
+    build:
+      context: .
+    environment:
+      NODE_ENV: production
+      API_KEY: ${API_KEY}
+      TEAM: ${TEAM}
+      WAIT_TIME_IN_MS: ${WAIT_TIME_IN_MS}
