@@ -7,19 +7,17 @@ Basic CLI to stream live cricket scores (via cricket-live-scores API, which does
 1. Sign up for API key, for free, at https://cricketdata.org/.
 2. Set environment variable `API_KEY`: `export API_KEY=<api-key>`
 3. Run:
-   - Via Node (requires Node>=18): Either
-     - Directly via shell, if Node is on path: `./src/scores.mjs <team-name, whose match's score is required, for e.g. England> <wait-time between refresh, in ms; for e.g. 10000 for 10sec wait between score update>`.
-     - Or, via Node: `node src/scores.mjs <team-name> <wait-time in ms>`.
-     - Or, via npm:
-       - Set environment variables: `API_KEY` , `TEAM` and `WAIT_TIME_IN_MS`
-       - `npm run live-cricket-score`
-   - Via Docker-Compose:
+   - Via Node (requires Node>=18):
+     - Install: `npm install -g cricket-live-scores`
+     - Run: `cls <team-name, whose score is required> <wait-time between score refresh, in ms>`
+       - Example: `cls England 60000`, for England's score, refreshed every 1 minute.
+   - Via Docker:
      - Set environment variables: `API_KEY` , `TEAM` and `WAIT_TIME_IN_MS`
-     - `docker compose run score`
+     - `docker run ghcr.io/asadhasan/cricket-live-scores-cli:main`
 
 # To-do
 
-Distribute via NPM and Homebrew.
+Distribute via Homebrew also.
 
 # Contributing
 
