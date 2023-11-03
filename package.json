@@ -1,17 +1,31 @@
 {
   "name": "cricket-live-scores",
-  "version": "0.5.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.6.0",
+  "description": "Basic CLI to stream live cricket scores in terminal",
+  "main": "src/scores.js",
   "scripts": {
-    "live-cricket-score": "node src/scores.mjs",
+    "live-cricket-score": "node src/scores.js",
     "prepare": "husky install",
-    "commit": "cz"
+    "commit": "cz",
+    "docker-package": "pkg -t alpine-latest src/scores.js",
+    "package": "pkg .",
+    "test": "npm run live-cricket-score"
   },
   "bin": {
-    "cls": "src/scores.mjs"
+    "cls": "src/scores.js"
   },
-  "files": ["src/scores.mjs"],
+  "pkg": {
+    "targets": [
+      "latest-alpine-arm64",
+      "latest-linux-arm64",
+      "latest-win-arm64",
+      "latest-macos-arm64"
+    ],
+    "outputPath": "bin"
+  },
+  "files": [
+    "src/scores.js"
+  ],
   "keywords": [],
   "author": "Asad Hasan",
   "license": "MIT",
@@ -26,6 +40,7 @@
     "eslint-plugin-import": "^2.29.0",
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
+    "pkg": "^5.8.1",
     "prettier": "3.0.3"
   },
   "lint-staged": {
