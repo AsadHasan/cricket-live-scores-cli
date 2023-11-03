@@ -38,6 +38,7 @@ jobs:
         run: chmod +x ./bin/cricket-live-scores-win.exe && ./bin/cricket-live-scores-win.exe
 
   release:
+    permissions: write-all
     needs: ["test"]
     runs-on: ubuntu-latest
     steps:
