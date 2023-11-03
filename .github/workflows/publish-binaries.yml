@@ -28,9 +28,6 @@ jobs:
     steps:
       - name: Download
         uses: actions/download-artifact@v3
-        with:
-          name: bin
-          path: bin
       - name: Test Linux binary
         if: ${{ matrix.os == 'ubuntu-latest' }}
         run: bin/cricket-lives-scores-linux
@@ -46,7 +43,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: bin
-          path: bin
+          path: bin/
       - name: Release
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
