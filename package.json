@@ -1,6 +1,6 @@
 {
   "name": "cricket-live-scores",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "description": "Basic CLI to stream live cricket scores in terminal",
   "main": "src/scores.js",
   "scripts": {
