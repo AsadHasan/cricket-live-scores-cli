@@ -1,6 +1,6 @@
 {
   "name": "cricket-live-scores",
-  "version": "0.6.7",
+  "version": "0.6.8",
   "description": "Basic CLI to stream live cricket scores in terminal",
   "main": "src/scores.js",
   "scripts": {
@@ -16,10 +16,10 @@
   },
   "pkg": {
     "targets": [
-      "latest-alpine-arm64",
-      "latest-linux-arm64",
-      "latest-win-arm64",
-      "latest-macos-arm64"
+      "latest-alpine-x64",
+      "latest-linux-x64",
+      "latest-win-x64",
+      "latest-macos-x64"
     ],
     "outputPath": "bin"
   },
