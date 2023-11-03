@@ -28,12 +28,15 @@ jobs:
     steps:
       - name: Download
         uses: actions/download-artifact@v3
+        id: download
+      - name: Display structure of downloaded files
+        run: ls -R
       - name: Test Linux binary
         if: ${{ matrix.os == 'ubuntu-latest' }}
-        run: bin/cricket-lives-scores-linux
+        run: ${{steps.download.outputs.download-path}}/cricket-lives-scores-linux
       - name: Test Windows binary
         if: ${{ matrix.os == 'windows-latest' }}
-        run: bin/cricket-live-scores-win.exe
+        run: ${{steps.download.outputs.download-path}}/cricket-live-scores-win.exe
 
   release:
     needs: ["test"]
