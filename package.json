@@ -1,6 +1,6 @@
 {
   "name": "cricket-live-scores",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "Basic CLI to stream live cricket scores in terminal",
   "main": "src/scores.js",
   "scripts": {
@@ -29,6 +29,13 @@
   "keywords": [],
   "author": "Asad Hasan",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AsadHasan/cricket-live-scores-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AsadHasan/cricket-live-scores-cli/issues"
+  },
   "devDependencies": {
     "@commitlint/cli": "^18.2.0",
     "@commitlint/config-conventional": "^18.1.0",
